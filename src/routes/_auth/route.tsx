@@ -1,5 +1,5 @@
 import { createFileRoute, Outlet } from '@tanstack/react-router';
-import Logo from "../../../public/16f59f5e-4d07-42d1-95cd-4c33f46f324c.png";
+import Logo from "../../../public/logo.png";
 
 export const Route = createFileRoute('/_auth')({
   component: RouteComponent,

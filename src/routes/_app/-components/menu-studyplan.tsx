@@ -9,6 +9,7 @@ import {
   DropdownMenuTrigger
 } from "#/components/ui/dropdown-menu";
 import { Input } from "#/components/ui/input";
+import InputColor from "#/components/ui/input-color";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -24,6 +25,7 @@ import { useState } from "react";
 
 export function MenuStudyPlan() {
   const [open, setOpen] = useState(false)
+  const [color, setColor] = useState("#FF0000");
 
   return (
     <>
@@ -70,7 +72,11 @@ export function MenuStudyPlan() {
             <div>
               <span className="text-sm text-zinc-200 font-bold">Cor do plano</span>
               <AlertDialogDescription>Selecione uma cor especial para o seu plano de estudos.</AlertDialogDescription>
-              <Input className="w-full mt-3" placeholder="Polícia Cívil DF" />
+              <InputColor 
+                value={color}
+                onChange={setColor}
+                onBlur={() => console.log("color picker")}
+              />
             </div>
             <div>
               <span className="text-sm text-zinc-200 font-bold">Descrição do plano</span>
@@ -79,8 +85,8 @@ export function MenuStudyPlan() {
             </div>
           </div>
           <AlertDialogFooter className="mt-7">
-            <AlertDialogCancel className={"rounded-md"}>Cancelar</AlertDialogCancel>
-            <AlertDialogAction className={"rounded-md"}>Continuar</AlertDialogAction>
+            <AlertDialogCancel className={"rounded-md cursor-pointer"}>Cancelar</AlertDialogCancel>
+            <AlertDialogAction className={"rounded-md cursor-pointer"}>Continuar</AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
